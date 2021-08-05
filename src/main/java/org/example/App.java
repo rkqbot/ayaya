@@ -16,14 +16,13 @@ import java.time.OffsetDateTime;
 public class App 
 {
     public static void main( String[] args ) throws IOException {
-//        String resource = "mybatis-config.xml";
-//        InputStream inputStream = Resources.getResourceAsStream(resource);
-//        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-//        try(SqlSession session = sqlSessionFactory.openSession()){
-//            HeiheiMapper mapper = session.getMapper(HeiheiMapper.class);
-//            Heihei user = mapper.selectAll();
-//            System.out.println(user);
-//        }
-        System.out.println(OffsetDateTime.parse("2007-12-03T10:15:30+01:00"));
+        String resource = "mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        try(SqlSession session = sqlSessionFactory.openSession()){
+            HeiheiMapper mapper = session.getMapper(HeiheiMapper.class);
+            Heihei user = mapper.selectAll();
+            System.out.println(user);
+        }
     }
 }
